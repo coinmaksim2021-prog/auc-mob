@@ -120,7 +120,7 @@ function Header({ currentPage, setCurrentPage }) {
               disabled={isConnecting}
               data-testid="connect-wallet-button"
               id="header-connect-wallet-btn"
-              className="flex items-center gap-1.5 sm:gap-2 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-4 sm:px-6 py-2.5 sm:py-3 rounded-telegram-lg font-semibold text-sm hover:from-gray-900 hover:to-black shadow-lg hover:shadow-xl transition-all disabled:opacity-50 transform hover:scale-105 active:scale-95 whitespace-nowrap"
+              className="flex items-center gap-1 sm:gap-2 bg-gradient-to-r from-gray-800 to-gray-900 text-white px-3 sm:px-6 py-2 sm:py-3 rounded-telegram-lg font-semibold text-xs sm:text-sm hover:from-gray-900 hover:to-black shadow-lg hover:shadow-xl transition-all disabled:opacity-50 transform hover:scale-105 active:scale-95 whitespace-nowrap"
             >
               {isConnecting ? (
                 <>
