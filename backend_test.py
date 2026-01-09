@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-Backend API Tests for FOMO Strategy App
-Testing Hero section statistics endpoint
+Backend API Tests for FOMO Strategy NFT Platform
+Testing all required API endpoints:
+1. GET /api/ - Health check
+2. GET /api/strategy/state - Get strategy state
+3. GET /api/statistics - Get statistics
 """
 
 import requests
@@ -21,6 +24,125 @@ def load_frontend_env():
                     key, value = line.split('=', 1)
                     env_vars[key] = value
     return env_vars
+
+def test_health_check():
+    """Test GET /api/ - Health check endpoint"""
+    print("=" * 60)
+    print("TESTING: Health Check API")
+    print("=" * 60)
+    
+    # Get backend URL from frontend .env
+    env_vars = load_frontend_env()
+    backend_url = env_vars.get('REACT_APP_BACKEND_URL', 'http://localhost:8001')
+    
+    print(f"Backend URL: {backend_url}")
+    
+    # Test endpoint
+    endpoint = f"{backend_url}/api/"
+    print(f"Testing endpoint: {endpoint}")
+    
+    try:
+        # Make API request
+        response = requests.get(endpoint, timeout=10)
+        print(f"Response Status: {response.status_code}")
+        
+        if response.status_code != 200:
+            print(f"❌ FAILED: Expected status 200, got {response.status_code}")
+            print(f"Response text: {response.text}")
+            return False
+        
+        # Parse JSON response
+        try:
+            data = response.json()
+            print("✅ SUCCESS: Valid JSON response received")
+            print(f"Response: {json.dumps(data, indent=2)}")
+        except json.JSONDecodeError as e:
+            print(f"❌ FAILED: Invalid JSON response - {e}")
+            print(f"Response text: {response.text}")
+            return False
+        
+        # Check if message exists
+        if 'message' in data:
+            print("✅ Health check endpoint working correctly")
+            return True
+        else:
+            print("❌ FAILED: Expected 'message' field in response")
+            return False
+        
+    except requests.exceptions.RequestException as e:
+        print(f"❌ FAILED: Network error - {e}")
+        return False
+    except Exception as e:
+        print(f"❌ FAILED: Unexpected error - {e}")
+        return False
+
+def test_statistics_endpoint():
+    """Test GET /api/statistics endpoint"""
+    print("=" * 60)
+    print("TESTING: Statistics API")
+    print("=" * 60)
+    
+    # Get backend URL from frontend .env
+    env_vars = load_frontend_env()
+    backend_url = env_vars.get('REACT_APP_BACKEND_URL', 'http://localhost:8001')
+    
+    print(f"Backend URL: {backend_url}")
+    
+    # Test endpoint
+    endpoint = f"{backend_url}/api/statistics"
+    print(f"Testing endpoint: {endpoint}")
+    
+    try:
+        # Make API request
+        response = requests.get(endpoint, timeout=10)
+        print(f"Response Status: {response.status_code}")
+        
+        if response.status_code != 200:
+            print(f"❌ FAILED: Expected status 200, got {response.status_code}")
+            print(f"Response text: {response.text}")
+            return False
+        
+        # Parse JSON response
+        try:
+            data = response.json()
+            print("✅ SUCCESS: Valid JSON response received")
+        except json.JSONDecodeError as e:
+            print(f"❌ FAILED: Invalid JSON response - {e}")
+            print(f"Response text: {response.text}")
+            return False
+        
+        # Verify response structure
+        print("\n" + "=" * 40)
+        print("VERIFYING STATISTICS DATA")
+        print("=" * 40)
+        
+        success = True
+        required_fields = [
+            'nft_floor_price', 'token_price', 'market_cap', 'total_volume_24h',
+            'total_nfts_owned', 'total_buybacks', 'total_burned', 'treasury_balance'
+        ]
+        
+        for field in required_fields:
+            if field in data:
+                print(f"✅ {field}: {data[field]}")
+            else:
+                print(f"❌ {field}: Missing")
+                success = False
+        
+        # Print full response for debugging
+        print(f"\n" + "=" * 40)
+        print("FULL STATISTICS RESPONSE")
+        print("=" * 40)
+        print(json.dumps(data, indent=2))
+        
+        return success
+        
+    except requests.exceptions.RequestException as e:
+        print(f"❌ FAILED: Network error - {e}")
+        return False
+    except Exception as e:
+        print(f"❌ FAILED: Unexpected error - {e}")
+        return False
 
 def test_strategy_state_endpoint():
     """Test GET /api/strategy/state endpoint for Hero section stats"""
