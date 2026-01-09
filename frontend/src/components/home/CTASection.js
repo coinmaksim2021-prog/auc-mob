@@ -4,7 +4,7 @@ function CTASection({ setCurrentPage }) {
   return (
     <section className="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-20">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Ready to Get Started?</h2>
+        <h2 className="text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Ready to Get Started?</h2>
         <p className="text-sm sm:text-lg text-gray-600 mb-6 sm:mb-8">
           Join the strategy and benefit from automated buybacks and burns
         </p>
