@@ -320,6 +320,7 @@ This release represents a complete overhaul of wallet integration, legal complia
 
 ## Version History
 
+- **2.1.0** (2026-01-10) - Mobile Adaptive Design Update
 - **2.0.0** (2026-01-08) - Production Release with Dynamic Wallet & SEO
 - **1.0.0** (2025-12-XX) - Initial MVP Release
 
