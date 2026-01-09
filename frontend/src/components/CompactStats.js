@@ -475,6 +475,7 @@ function CompactStats({ strategyState }) {
           <p className="text-lg font-bold text-gray-900 mb-1">{(activity.eth_spent_on_buybacks || 0).toFixed(3)}</p>
           <p className="text-xs text-gray-500">Total Spent ETH</p>
         </div>
+        </div>
       </div>
     </div>
   );
