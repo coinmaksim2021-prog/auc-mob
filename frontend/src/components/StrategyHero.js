@@ -140,6 +140,7 @@ const StrategyHero = ({ strategyState }) => {
               Based on recent performance
             </div>
           </div>
+          </div>
         </div>
 
         {/* Mobile hint - swap is visible below */}
