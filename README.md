@@ -77,11 +77,15 @@ FOMO Strategy is a next-generation NFT auction platform that combines:
 
 ### User Experience
 
-#### 🎯 Responsive Design
-- Mobile-first approach
-- Tablet-optimized layouts
-- Desktop power-user features
-- PWA-ready for offline access
+#### 🎯 Responsive Design (UPDATED v2.1)
+- **Mobile-first approach** with horizontal scroll patterns
+- **Dot pagination indicators** for scrollable sections
+- **Hidden scrollbars** for cleaner mobile UX
+- **Adaptive typography** - smaller on mobile, larger on desktop
+- **Touch-friendly** - larger tap targets, swipe gestures
+- **Tablet-optimized layouts**
+- **Desktop power-user features**
+- **PWA-ready** for offline access
 
 #### 🎨 Modern UI/UX
 - **Framer Motion** - Smooth animations
