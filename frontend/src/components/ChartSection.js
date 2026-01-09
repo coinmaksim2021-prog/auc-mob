@@ -130,7 +130,7 @@ function ChartSection({ strategyState }) {
           </p>
         </div>
         <div className="min-w-0">
-          <p className="text-[10px] sm:text-xs text-gray-500 mb-0.5 sm:mb-1">MCap</p>
+          <p className="text-[10px] sm:text-xs text-gray-500 mb-0.5 sm:mb-1"><span className="sm:hidden">MCap</span><span className="hidden sm:inline">Market Cap</span></p>
           <p className="text-xs sm:text-sm font-semibold text-gray-900 truncate">
             ${((market.market_cap_usd || 145000) / 1000).toFixed(0)}K
           </p>
