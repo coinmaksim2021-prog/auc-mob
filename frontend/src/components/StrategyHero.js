@@ -62,10 +62,11 @@ const StrategyHero = ({ strategyState }) => {
           </div>
         </div>
 
-        {/* Key Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Key Metrics - Horizontal scroll on mobile */}
+        <div className="overflow-x-auto sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex sm:grid sm:grid-cols-3 gap-4 min-w-max sm:min-w-0">
           {/* TVL */}
-          <div className="bg-white rounded-telegram-lg p-5 border border-gray-200 hover:border-emerald-300 transition-all hover:shadow-lg transform hover:scale-105 active:scale-95 cursor-pointer">
+          <div className="w-44 sm:w-auto flex-shrink-0 sm:flex-shrink bg-white rounded-telegram-lg p-4 sm:p-5 border border-gray-200 hover:border-emerald-300 transition-all hover:shadow-lg transform hover:scale-105 active:scale-95 cursor-pointer">
             <div className="flex items-start justify-between mb-2">
               <span className="text-sm text-gray-600 font-medium flex items-center gap-1">
                 Total Value Locked
