@@ -101,11 +101,69 @@ function Strategy() {
 
         {/* Main Grid: Chart + Stats Left, Swap + Floor NFT Right */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Mobile only: Swap -> Chart -> Stats -> FloorNFT */}
+          {/* Mobile only: Swap -> Chart -> ActivityStats -> CompactStats -> FloorNFT */}
           <div className="lg:hidden space-y-4">
             <SwapSection strategyState={strategyState} hideMobileStats={true} />
             <ChartSection strategyState={strategyState} />
-            {/* Activity Stats shown here on mobile - part of SwapSection but rendered separately */}
+            {/* Activity Stats - Mobile version after chart */}
+            <div className="card">
+              <div className="grid grid-cols-2 gap-4">
+                {/* Activity Stats Column */}
+                <div>
+                  <h4 className="text-xs font-semibold text-gray-900 mb-3">Activity Stats</h4>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-[10px] text-gray-600">Total Spent</span>
+                      <span className="text-xs font-semibold text-gray-900">
+                        {(strategyState?.activity?.eth_spent_on_buybacks || 0).toFixed(2)} ETH
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-[10px] text-gray-600">Total Earned</span>
+                      <span className="text-xs font-semibold text-gray-900">
+                        {(strategyState?.activity?.eth_received_from_sales || 0).toFixed(2)} ETH
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center pt-2 border-t border-gray-200">
+                      <span className="text-[10px] text-gray-600">Net Profit</span>
+                      <span className="text-xs font-bold text-emerald-600">
+                        +{((strategyState?.activity?.eth_received_from_sales || 0) - (strategyState?.activity?.eth_spent_on_buybacks || 0)).toFixed(2)} ETH
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                {/* Supply Info Column */}
+                <div>
+                  <h4 className="text-xs font-semibold text-gray-900 mb-3">Supply Info</h4>
+                  <div className="space-y-2">
+                    <div className="flex justify-between items-center">
+                      <span className="text-[10px] text-gray-600">Total Supply</span>
+                      <span className="text-xs font-semibold text-gray-900">
+                        {(strategyState?.nft_supply?.total_minted || 0).toLocaleString()}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-[10px] text-gray-600">Circulating</span>
+                      <span className="text-xs font-semibold text-gray-900">
+                        {(strategyState?.nft_supply?.market_circulating || 0).toLocaleString()}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center pt-2 border-t border-gray-200">
+                      <span className="text-[10px] text-gray-600">Strategy</span>
+                      <span className="text-xs font-semibold text-gray-900">
+                        {(strategyState?.nft_supply?.strategy_owned || 0).toLocaleString()}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-[10px] text-gray-600">Burned</span>
+                      <span className="text-xs font-bold text-orange-600">
+                        {(strategyState?.nft_supply?.burned || 0).toLocaleString()}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <CompactStats strategyState={strategyState} />
             <FloorNFT strategyState={strategyState} />
           </div>
