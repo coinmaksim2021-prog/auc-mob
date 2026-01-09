@@ -547,6 +547,7 @@ function SwapSection({ strategyState, hideMobileStats = false }) {
           </div>
         </div>
       </div>
+      )}
 
       {/* Invite Modal */}
       {showInviteModal && (
