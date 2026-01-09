@@ -263,7 +263,7 @@ function CompactStats({ strategyState }) {
         </div>
 
         {/* NFTs to Floor */}
-        <div className="bg-white border border-gray-200 rounded-xl p-4 hover:border-gray-300 transition-all relative group">
+        <div className="w-36 sm:w-auto flex-shrink-0 sm:flex-shrink bg-white border border-gray-200 rounded-xl p-3 sm:p-4 hover:border-gray-300 transition-all relative group">
           <div className="flex items-center gap-2 mb-3">
             <svg className="w-5 h-5 text-gray-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
