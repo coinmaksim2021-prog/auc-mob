@@ -1,0 +1,33 @@
+{
+  "short_name": "FOMO Strategy",
+  "name": "FOMO Strategy - NFT Auction Platform",
+  "description": "Revolutionary NFT auction platform with automated buyback & burn mechanics",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#10b981",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "blockchain", "nft"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/"
+}
