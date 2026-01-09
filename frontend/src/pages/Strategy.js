@@ -101,19 +101,21 @@ function Strategy() {
 
         {/* Main Grid: Chart + Stats Left, Swap + Floor NFT Right */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Right Column: Swap + Floor NFT - FIRST on mobile */}
+          {/* Mobile only: Swap first, then Chart, then FloorNFT */}
           <div className="lg:hidden space-y-4">
             <SwapSection strategyState={strategyState} />
+            <ChartSection strategyState={strategyState} />
+            <CompactStats strategyState={strategyState} />
             <FloorNFT strategyState={strategyState} />
           </div>
 
-          {/* Left Column: Chart + Stats (2/3 width on desktop) */}
-          <div className="lg:col-span-2 space-y-6">
+          {/* Desktop: Left Column - Chart + Stats (2/3 width) */}
+          <div className="hidden lg:block lg:col-span-2 space-y-6">
             <ChartSection strategyState={strategyState} />
             <CompactStats strategyState={strategyState} />
           </div>
 
-          {/* Right Column: Swap + Floor NFT - SECOND on desktop */}
+          {/* Desktop: Right Column - Swap + Floor NFT */}
           <div className="hidden lg:block lg:col-span-1 space-y-4">
             <SwapSection strategyState={strategyState} />
             <FloorNFT strategyState={strategyState} />
