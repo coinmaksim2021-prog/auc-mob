@@ -140,6 +140,7 @@ const StrategyHero = ({ strategyState }) => {
               Based on recent performance
             </div>
           </div>
+          </div>
         </div>
         {/* Scroll indicators - Mobile only */}
         <div className="flex sm:hidden justify-center gap-1.5 mt-3">
