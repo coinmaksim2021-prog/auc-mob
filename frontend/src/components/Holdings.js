@@ -79,13 +79,15 @@ function Holdings({ strategyState }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+      {/* NFT Grid - Horizontal scroll on mobile */}
+      <div className="overflow-x-auto sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar">
+        <div className="flex sm:grid sm:grid-cols-6 gap-4 min-w-max sm:min-w-0">
         {holdings.slice(0, 18).map((nft) => {
           const rarity = getRarity(nft.token_id);
           return (
             <div 
               key={nft.token_id} 
-              className="group rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
+              className="w-32 sm:w-auto flex-shrink-0 sm:flex-shrink group rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
               style={{ 
                 background: '#F5FBFD',
                 boxShadow: '2px 2px 8px 2px rgba(0, 5, 48, 0.08)'
