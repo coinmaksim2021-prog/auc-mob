@@ -240,7 +240,7 @@ function CompactStats({ strategyState }) {
       <div className="overflow-x-auto sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0">
         <div className="flex sm:grid sm:grid-cols-4 gap-3 min-w-max sm:min-w-0">
         {/* % Token in LP */}
-        <div className="bg-white border border-gray-200 rounded-xl p-4 hover:border-gray-300 transition-all relative group">
+        <div className="w-36 sm:w-auto flex-shrink-0 sm:flex-shrink bg-white border border-gray-200 rounded-xl p-3 sm:p-4 hover:border-gray-300 transition-all relative group">
           <div className="flex items-center gap-2 mb-3">
             <svg className="w-5 h-5 text-gray-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
