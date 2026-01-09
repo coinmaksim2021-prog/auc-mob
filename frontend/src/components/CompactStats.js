@@ -364,9 +364,16 @@ function CompactStats({ strategyState }) {
         </div>
         </div>
       </div>
+      {/* Scroll indicators - First row - Mobile only */}
+      <div className="flex sm:hidden justify-center gap-1.5 mt-2 mb-1">
+        <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+        <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+        <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+        <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+      </div>
 
       {/* Second Stats Row - 4 Cards - Horizontal scroll on mobile */}
-      <div className="overflow-x-auto sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0">
+      <div className="overflow-x-auto sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar">
         <div className="flex sm:grid sm:grid-cols-4 gap-3 min-w-max sm:min-w-0">
         {/* Treasury ETH */}
         <div className="w-36 sm:w-auto flex-shrink-0 sm:flex-shrink bg-white border border-gray-200 rounded-xl p-3 sm:p-4 text-center hover:border-gray-300 transition-all relative group">
