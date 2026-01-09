@@ -69,11 +69,11 @@ function Header({ currentPage, setCurrentPage }) {
         </div>
 
         {/* Right side: Enter App + Auction + Connect Wallet */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           <button
             onClick={() => setCurrentPage('strategy')}
             data-testid="nav-enter-app-button"
-            className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-telegram-lg font-semibold text-sm transition-all border transform hover:scale-105 active:scale-95 whitespace-nowrap ${
+            className={`px-3 sm:px-6 py-2 sm:py-3 rounded-telegram-lg font-semibold text-xs sm:text-sm transition-all border transform hover:scale-105 active:scale-95 whitespace-nowrap ${
               currentPage === 'strategy' 
                 ? walletAddress
                   ? 'bg-gray-900 text-white border-gray-900 shadow-lg'
@@ -88,7 +88,7 @@ function Header({ currentPage, setCurrentPage }) {
           <button
             onClick={() => setCurrentPage('auction')}
             data-testid="nav-auction-button"
-            className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-telegram-lg font-semibold text-sm transition-all border transform hover:scale-105 active:scale-95 whitespace-nowrap ${
+            className={`px-3 sm:px-6 py-2 sm:py-3 rounded-telegram-lg font-semibold text-xs sm:text-sm transition-all border transform hover:scale-105 active:scale-95 whitespace-nowrap ${
               currentPage === 'auction' 
                 ? walletAddress
                   ? 'bg-gray-900 text-white border-gray-900 shadow-lg'
