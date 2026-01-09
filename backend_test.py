@@ -249,22 +249,34 @@ def test_strategy_state_endpoint():
 
 def main():
     """Run all backend tests"""
-    print("Starting Backend API Tests for Hero Section Statistics")
+    print("Starting Backend API Tests for FOMO Strategy NFT Platform")
     print("=" * 60)
     
-    # Test strategy state endpoint
-    test_passed = test_strategy_state_endpoint()
+    # Test all endpoints
+    health_passed = test_health_check()
+    print("\n")
+    
+    statistics_passed = test_statistics_endpoint()
+    print("\n")
+    
+    strategy_passed = test_strategy_state_endpoint()
     
     print("\n" + "=" * 60)
     print("TEST SUMMARY")
     print("=" * 60)
     
-    if test_passed:
-        print("✅ ALL TESTS PASSED: Hero section API is working correctly")
-        print("✅ NFT Circulation, $F Tokens Burned, and Treasury Balance all return expected values")
+    all_passed = health_passed and statistics_passed and strategy_passed
+    
+    print(f"Health Check API: {'✅ PASS' if health_passed else '❌ FAIL'}")
+    print(f"Statistics API: {'✅ PASS' if statistics_passed else '❌ FAIL'}")
+    print(f"Strategy State API: {'✅ PASS' if strategy_passed else '❌ FAIL'}")
+    
+    if all_passed:
+        print("\n✅ ALL BACKEND TESTS PASSED")
+        print("✅ All required API endpoints are working correctly")
         return True
     else:
-        print("❌ TESTS FAILED: Hero section API has issues")
+        print("\n❌ SOME BACKEND TESTS FAILED")
         print("❌ Check the failed assertions above for details")
         return False
 
