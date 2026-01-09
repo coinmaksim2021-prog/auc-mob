@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 
-// Format price with short notation for small values
-const formatPrice = (price) => {
+// Format price with short notation for small values (mobile only)
+const formatPriceMobile = (price) => {
   if (price < 0.0001) {
-    // Count zeros after decimal
     const str = price.toFixed(10);
     const match = str.match(/0\.0*[1-9]/);
     if (match) {
-      const zeros = match[0].length - 2; // subtract "0."
+      const zeros = match[0].length - 2;
       const significant = price.toFixed(zeros + 2).replace(/0\.0+/, '');
       return `$0.0{${zeros}}${significant.slice(0, 2)}`;
     }
   }
+  if (price < 0.01) return `$${price.toFixed(6)}`;
+  if (price < 1) return `$${price.toFixed(4)}`;
+  return `$${price.toFixed(2)}`;
+};
+
+// Normal price format (desktop)
+const formatPriceDesktop = (price) => {
   if (price < 0.01) return `$${price.toFixed(6)}`;
   if (price < 1) return `$${price.toFixed(4)}`;
   return `$${price.toFixed(2)}`;
