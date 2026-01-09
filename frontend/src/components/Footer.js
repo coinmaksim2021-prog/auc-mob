@@ -292,15 +292,14 @@ If you have questions about this Cookie Policy, you may contact us through the o
     <>
       <footer className="relative bg-gradient-to-b from-white to-gray-50 border-t border-gray-100 py-8">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Mobile: flex-col centered, Desktop: grid 4 columns */}
-          <div className="flex flex-col items-center gap-6 md:grid md:grid-cols-4 md:items-start md:gap-8">
-            
+          {/* Desktop: grid 4 columns, Mobile: flex-col */}
+          <div className="hidden md:grid md:grid-cols-4 md:items-start md:gap-8">
             {/* Left: Logo + Description */}
-            <div className="space-y-3 text-center md:text-left">
+            <div className="space-y-3 text-left">
               <img 
                 src="https://customer-assets.emergentagent.com/job_crypto-dashboard-91/artifacts/6ozprlkp_Main%20Logo.svg" 
                 alt="FOMO Strategy" 
-                className="h-8 mx-auto md:mx-0"
+                className="h-8"
               />
               <p className="text-sm text-gray-600 leading-relaxed">
                 NFT Buyback & Burn strategy for sustainable value creation.
@@ -310,8 +309,8 @@ If you have questions about this Cookie Policy, you may contact us through the o
               </p>
             </div>
 
-            {/* Platform Buttons - В ряд */}
-            <div className="flex flex-row gap-2 justify-center md:justify-start">
+            {/* Platform Buttons */}
+            <div className="flex flex-row gap-2 justify-start">
               <a
                 href="https://www.fomo.cx"
                 target="_blank"
@@ -331,7 +330,7 @@ If you have questions about this Cookie Policy, you may contact us through the o
             </div>
 
             {/* Resources */}
-            <div className="text-center md:text-left">
+            <div className="text-left">
               <h3 className="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Resources</h3>
               <div className="flex flex-col gap-2">
                 <a href="#about" className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200">About</a>
@@ -340,14 +339,76 @@ If you have questions about this Cookie Policy, you may contact us through the o
               </div>
             </div>
 
-            {/* Legal - отдельная колонка */}
-            <div className="text-center md:text-left">
+            {/* Legal */}
+            <div className="text-left">
               <h3 className="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Legal</h3>
               <div className="flex flex-col gap-2">
-                <button onClick={() => openLegalModal('privacy')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200 text-center md:text-left">Privacy Policy</button>
-                <button onClick={() => openLegalModal('terms')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200 text-center md:text-left">Terms of Use</button>
-                <button onClick={() => openLegalModal('disclaimer')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200 text-center md:text-left">Disclaimer</button>
-                <button onClick={() => openLegalModal('cookies')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200 text-center md:text-left">Cookie Policy</button>
+                <button onClick={() => openLegalModal('privacy')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200 text-left">Privacy Policy</button>
+                <button onClick={() => openLegalModal('terms')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200 text-left">Terms of Use</button>
+                <button onClick={() => openLegalModal('disclaimer')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200 text-left">Disclaimer</button>
+                <button onClick={() => openLegalModal('cookies')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200 text-left">Cookie Policy</button>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile layout */}
+          <div className="flex flex-col items-center gap-6 md:hidden">
+            {/* Logo + Description */}
+            <div className="space-y-3 text-center">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_crypto-dashboard-91/artifacts/6ozprlkp_Main%20Logo.svg" 
+                alt="FOMO Strategy" 
+                className="h-8 mx-auto"
+              />
+              <p className="text-sm text-gray-600 leading-relaxed">
+                NFT Buyback & Burn strategy for sustainable value creation.
+              </p>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Automated perpetual machine combining NFT and token buybacks.
+              </p>
+            </div>
+
+            {/* Platform Buttons - В ряд */}
+            <div className="flex flex-row gap-2 justify-center">
+              <a
+                href="https://www.fomo.cx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-gradient-to-r from-gray-800 to-gray-900 text-white px-3 py-1.5 rounded-xl text-sm font-semibold hover:from-emerald-600 hover:to-emerald-700 transition-all btn-hover-lift"
+              >
+                FOMO Platform
+              </a>
+              <a
+                href="https://www.fomo.wiki"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-white border border-gray-300 text-gray-900 px-3 py-1.5 rounded-xl text-sm font-semibold transition-all btn-hover-lift"
+              >
+                FOMO Info
+              </a>
+            </div>
+
+            {/* Resources + Legal - 2 columns */}
+            <div className="grid grid-cols-2 gap-8 w-full max-w-sm">
+              {/* Resources */}
+              <div className="text-center">
+                <h3 className="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Resources</h3>
+                <div className="flex flex-col gap-2">
+                  <a href="#about" className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200">About</a>
+                  <a href="#fomo-strategy" className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200">FOMO Strategy</a>
+                  <a href="#nft-market" className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200">NFT Market</a>
+                </div>
+              </div>
+
+              {/* Legal */}
+              <div className="text-center">
+                <h3 className="text-sm font-bold text-gray-900 mb-3 uppercase tracking-wider">Legal</h3>
+                <div className="flex flex-col gap-2">
+                  <button onClick={() => openLegalModal('privacy')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200">Privacy Policy</button>
+                  <button onClick={() => openLegalModal('terms')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200">Terms of Use</button>
+                  <button onClick={() => openLegalModal('disclaimer')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200">Disclaimer</button>
+                  <button onClick={() => openLegalModal('cookies')} className="text-sm text-gray-600 hover:text-emerald-600 transition-all duration-200">Cookie Policy</button>
+                </div>
               </div>
             </div>
           </div>
