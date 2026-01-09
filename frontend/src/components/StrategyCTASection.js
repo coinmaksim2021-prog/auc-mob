@@ -6,24 +6,24 @@ const StrategyCTASection = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20 mt-12">
+    <section className="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-20 mt-8 sm:mt-12">
       <div className="max-w-4xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Join the Strategy?</h2>
-        <p className="text-lg text-gray-600 mb-8">
+        <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">Ready to Join the Strategy?</h2>
+        <p className="text-sm sm:text-lg text-gray-600 mb-6 sm:mb-8">
           Start swapping tokens and benefit from automated buybacks and burns
         </p>
-        <div className="flex items-center justify-center gap-4 mb-10">
+        <div className="flex items-center justify-center gap-2 sm:gap-4 mb-8 sm:mb-10">
           <button 
             onClick={scrollToSwap}
-            className="bg-gray-900 text-white px-10 py-4 rounded-telegram-xl font-semibold text-base hover:bg-black shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95"
+            className="bg-gray-900 text-white px-4 sm:px-10 py-2.5 sm:py-4 rounded-xl sm:rounded-telegram-xl font-semibold text-xs sm:text-base hover:bg-black shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95"
           >
-            Swap Tokens Now →
+            Swap Tokens →
           </button>
           <a
             href="https://www.fomo.cx"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white border-2 border-gray-200 text-gray-900 px-10 py-4 rounded-3xl font-semibold text-base hover:bg-gray-50 hover:border-gray-300 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95"
+            className="bg-white border-2 border-gray-200 text-gray-900 px-4 sm:px-10 py-2.5 sm:py-4 rounded-xl sm:rounded-3xl font-semibold text-xs sm:text-base hover:bg-gray-50 hover:border-gray-300 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95"
           >
             Buy NFT
           </a>
