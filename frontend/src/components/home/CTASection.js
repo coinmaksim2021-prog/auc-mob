@@ -5,13 +5,13 @@ function CTASection({ setCurrentPage }) {
     <section className="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-20">
       <div className="max-w-4xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Ready to Get Started?</h2>
-        <p className="text-sm sm:text-lg text-gray-600 mb-6 sm:mb-8">
+        <p className="text-base text-gray-600 mb-6 sm:mb-8">
           Join the strategy and benefit from automated buybacks and burns
         </p>
         <div className="flex items-center justify-center gap-2 sm:gap-4 mb-8 sm:mb-10">
           <button 
             onClick={() => setCurrentPage('strategy')}
-            className="bg-gray-900 text-white px-4 sm:px-10 py-2.5 sm:py-4 rounded-xl sm:rounded-telegram-xl font-semibold text-xs sm:text-base hover:bg-black shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95"
+            className="bg-gray-900 text-white px-5 sm:px-10 py-3 sm:py-4 rounded-xl sm:rounded-telegram-xl font-semibold text-sm sm:text-base hover:bg-black shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95"
           >
             Dashboard →
           </button>
@@ -19,7 +19,7 @@ function CTASection({ setCurrentPage }) {
             href="https://www.fomo.cx"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white border-2 border-gray-200 text-gray-900 px-4 sm:px-10 py-2.5 sm:py-4 rounded-xl sm:rounded-telegram-xl font-semibold text-xs sm:text-base hover:bg-gray-50 hover:border-gray-300 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95"
+            className="bg-white border-2 border-gray-200 text-gray-900 px-5 sm:px-10 py-3 sm:py-4 rounded-xl sm:rounded-telegram-xl font-semibold text-sm sm:text-base hover:bg-gray-50 hover:border-gray-300 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 active:scale-95"
           >
             Buy NFT
           </a>
