@@ -106,6 +106,16 @@ function Sales({ strategyState }) {
             </div>
           );
         })}
+        </div>
+      </div>
+      {/* Scroll indicators - Mobile only */}
+      <div className="flex sm:hidden justify-center gap-1.5 mt-3">
+        <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+        <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+        <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+        <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+        <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+        <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
       </div>
     </div>
   );
