@@ -600,15 +600,10 @@ const ModalContent = ({ onClose, inviteCodeFromUrl }) => {
 const WalletConnectModal = ({ isOpen, onClose, inviteCodeFromUrl }) => {
   if (!isOpen) return null;
 
+  // DynamicContextProvider already wraps the app in App.js
+  // No need to nest it here
   return (
-    <DynamicContextProvider
-      settings={{
-        environmentId: DYNAMIC_ENVIRONMENT_ID,
-        walletConnectors: [EthereumWalletConnectors],
-      }}
-    >
-      <ModalContent onClose={onClose} inviteCodeFromUrl={inviteCodeFromUrl} />
-    </DynamicContextProvider>
+    <ModalContent onClose={onClose} inviteCodeFromUrl={inviteCodeFromUrl} />
   );
 };
 
