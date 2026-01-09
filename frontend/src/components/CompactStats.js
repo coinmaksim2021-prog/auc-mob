@@ -179,19 +179,19 @@ function CompactStats({ strategyState }) {
               </div>
               <div>
                 <div className="flex items-center gap-1">
-                  <h4 className="text-sm font-semibold text-gray-900">Token Burn Status</h4>
+                  <h4 className="text-xs sm:text-sm font-semibold text-gray-900">Token Burn Status</h4>
                   <Tooltip content="NFTs are permanently burned, reducing total supply and increasing value of remaining tokens">
-                    <svg className="w-4 h-4 text-gray-400 hover:text-gray-600 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 hover:text-gray-600 cursor-help" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </Tooltip>
                 </div>
-                <p className="text-xs text-gray-500">Tokens removed forever</p>
+                <p className="text-[10px] sm:text-xs text-gray-500">Tokens removed forever</p>
               </div>
             </div>
-            <div className="flex items-center gap-2 px-3 py-1.5 bg-orange-50 rounded-lg border border-orange-100">
-              <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-              <span className="text-xs text-orange-700 font-semibold">Burning</span>
+            <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 bg-orange-50 rounded-lg border border-orange-100">
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-500 rounded-full animate-pulse"></div>
+              <span className="text-[10px] sm:text-xs text-orange-700 font-semibold">Burning</span>
             </div>
           </div>
 
