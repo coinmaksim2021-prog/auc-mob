@@ -146,10 +146,12 @@ const CookieConsent = () => {
                                   onChange={(e) => setAcceptedCookies(e.target.checked)}
                                   className="peer sr-only"
                                 />
-                                <div className="w-5 h-5 border-2 border-gray-300 rounded-md peer-checked:border-emerald-500 peer-checked:bg-gradient-to-br peer-checked:from-emerald-400 peer-checked:to-teal-500 transition-all duration-200 group-hover:border-emerald-400 shadow-sm">
-                                  <svg className="w-full h-full text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                                  </svg>
+                                <div className={`w-5 h-5 border-2 rounded-md transition-all duration-200 group-hover:border-emerald-400 shadow-sm flex items-center justify-center ${acceptedCookies ? 'border-emerald-500 bg-gradient-to-br from-emerald-400 to-teal-500' : 'border-gray-300'}`}>
+                                  {acceptedCookies && (
+                                    <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                    </svg>
+                                  )}
                                 </div>
                               </div>
                               <div className="flex-1 min-w-0">
