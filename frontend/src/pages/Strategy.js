@@ -103,8 +103,9 @@ function Strategy() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Mobile only: Swap -> Chart -> Stats -> FloorNFT */}
           <div className="lg:hidden space-y-4">
-            <SwapSection strategyState={strategyState} />
+            <SwapSection strategyState={strategyState} hideMobileStats={true} />
             <ChartSection strategyState={strategyState} />
+            {/* Activity Stats shown here on mobile - part of SwapSection but rendered separately */}
             <CompactStats strategyState={strategyState} />
             <FloorNFT strategyState={strategyState} />
           </div>
