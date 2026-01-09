@@ -195,19 +195,19 @@ function CompactStats({ strategyState }) {
             </div>
           </div>
 
-          {/* Stats Row */}
-          <div className="grid grid-cols-3 gap-4 mb-5">
-            <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
-              <div className="text-2xl font-bold text-gray-900 mb-1">{animatedBurned.toLocaleString()}</div>
-              <p className="text-xs text-gray-500 font-medium">Burned</p>
+          {/* Stats Row - Compact on mobile */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-4 sm:mb-5">
+            <div className="bg-gray-50 rounded-xl p-2 sm:p-4 text-center border border-gray-100">
+              <div className="text-lg sm:text-2xl font-bold text-gray-900 mb-0.5 sm:mb-1">{animatedBurned.toLocaleString()}</div>
+              <p className="text-[10px] sm:text-xs text-gray-500 font-medium">Burned</p>
             </div>
-            <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
-              <div className="text-2xl font-bold text-gray-900 mb-1">{burnPercent.toFixed(1)}%</div>
-              <p className="text-xs text-gray-500 font-medium">of Supply</p>
+            <div className="bg-gray-50 rounded-xl p-2 sm:p-4 text-center border border-gray-100">
+              <div className="text-lg sm:text-2xl font-bold text-gray-900 mb-0.5 sm:mb-1">{burnPercent.toFixed(1)}%</div>
+              <p className="text-[10px] sm:text-xs text-gray-500 font-medium">of Supply</p>
             </div>
-            <div className="bg-gray-50 rounded-xl p-4 text-center border border-gray-100">
-              <div className="text-2xl font-bold text-gray-900 mb-1">{(totalMinted - burned).toLocaleString()}</div>
-              <p className="text-xs text-gray-500 font-medium">Remaining</p>
+            <div className="bg-gray-50 rounded-xl p-2 sm:p-4 text-center border border-gray-100">
+              <div className="text-lg sm:text-2xl font-bold text-gray-900 mb-0.5 sm:mb-1">{(totalMinted - burned).toLocaleString()}</div>
+              <p className="text-[10px] sm:text-xs text-gray-500 font-medium">Remaining</p>
             </div>
           </div>
 
