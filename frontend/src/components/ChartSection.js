@@ -106,13 +106,17 @@ function ChartSection({ strategyState }) {
       {/* Quick Price Info - Mobile optimized */}
       <div className="grid grid-cols-4 gap-2 sm:gap-4 mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-gray-200">
         <div className="min-w-0">
-          <p className="text-[10px] sm:text-xs text-gray-500 mb-0.5 sm:mb-1">Price</p>
-          <p className="text-xs sm:text-sm font-semibold text-gray-900 truncate">
-            {formatPrice(market.token_price_usd || 0.000042)}
+          <p className="text-[10px] sm:text-xs text-gray-500 mb-0.5 sm:mb-1"><span className="sm:hidden">Price</span><span className="hidden sm:inline">Price</span></p>
+          {/* Mobile: compact format, Desktop: normal format */}
+          <p className="text-xs sm:text-sm font-semibold text-gray-900 truncate sm:hidden">
+            {formatPriceMobile(market.token_price_usd || 0.000042)}
+          </p>
+          <p className="text-sm font-semibold text-gray-900 truncate hidden sm:block">
+            {formatPriceDesktop(market.token_price_usd || 0.000042)}
           </p>
         </div>
         <div className="min-w-0">
-          <p className="text-[10px] sm:text-xs text-gray-500 mb-0.5 sm:mb-1">24h</p>
+          <p className="text-[10px] sm:text-xs text-gray-500 mb-0.5 sm:mb-1"><span className="sm:hidden">24h</span><span className="hidden sm:inline">24h Change</span></p>
           <p className={`text-xs sm:text-sm font-semibold truncate ${
             (market.price_change_24h || 0) >= 0 ? 'text-emerald-600' : 'text-red-600'
           }`}>
@@ -120,7 +124,7 @@ function ChartSection({ strategyState }) {
           </p>
         </div>
         <div className="min-w-0">
-          <p className="text-[10px] sm:text-xs text-gray-500 mb-0.5 sm:mb-1">Vol</p>
+          <p className="text-[10px] sm:text-xs text-gray-500 mb-0.5 sm:mb-1"><span className="sm:hidden">Vol</span><span className="hidden sm:inline">Volume 24h</span></p>
           <p className="text-xs sm:text-sm font-semibold text-gray-900 truncate">
             ${((market.volume_24h_usd || 2400) / 1000).toFixed(1)}K
           </p>
