@@ -487,8 +487,9 @@ function SwapSection({ strategyState, hideMobileStats = false }) {
       </div>
 
       {/* Activity Stats & Supply Info - Mobile only - shows after chart */}
-      <div className="card lg:hidden">
-        <div className="grid grid-cols-2 gap-4">
+      {!hideMobileStats && (
+        <div className="card lg:hidden">
+          <div className="grid grid-cols-2 gap-4">
           {/* Activity Stats Column */}
           <div>
             <h4 className="text-xs font-semibold text-gray-900 mb-3">Activity Stats</h4>
