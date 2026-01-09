@@ -4,7 +4,7 @@ import { ACTIVE_NETWORK, TOKENS, CONTRACTS } from '../config/zkSync';
 import InviteModalSimple from './InviteModalSimple';
 import Tooltip from './Tooltip';
 
-function SwapSection({ strategyState }) {
+function SwapSection({ strategyState, hideMobileStats = false }) {
   const { walletAddress, isCorrectNetwork, connectWallet, switchToZkSync, getBalance } = useWeb3();
   
   const [fromAmount, setFromAmount] = useState('');
