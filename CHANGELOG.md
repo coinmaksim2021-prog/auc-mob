@@ -7,6 +7,113 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.0] - 2026-01-10
+
+### 📱 Mobile Adaptive Design Update
+
+This release focuses on comprehensive mobile optimization, implementing horizontal scroll patterns, compact layouts, and improved touch interactions.
+
+### Added
+
+#### 🎯 Horizontal Scroll Patterns
+- **Hero Stats** (Total Value Locked, NFTs Burned, Est. Strategy APY):
+  - Horizontal scroll instead of vertical stack
+  - 3 dot pagination indicators
+  - Fixed card width (w-44) for consistency
+  
+- **Stats Rows** (% Token in LP, NFTs to Floor, Price Gap, SPI, Treasury, etc.):
+  - Two rows of 4 cards each with horizontal scroll
+  - 4 dot indicators per row
+  - Fixed card width (w-36)
+
+- **Holdings & Sales NFT Grids**:
+  - Horizontal scroll for NFT cards
+  - 6 dot pagination indicators
+  - Fixed card width (w-32)
+
+#### 🎨 CSS Utilities
+```css
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+```
+
+### Changed
+
+#### 📐 Header Navigation
+- Reduced button sizes on mobile (`px-3 py-2` vs `px-6 py-3`)
+- Smaller font size (`text-xs` vs `text-sm`)
+- Tighter gaps (`gap-1.5` vs `gap-3`)
+
+#### 📊 F Token Price Section
+- Smaller title on mobile (`text-base` vs `text-xl`)
+- Compact price format: `$0.0{5}42` instead of `$0.000042`
+- Short labels: "Price", "24h", "Vol", "MCap"
+- Full labels on desktop: "Price", "24h Change", "Volume 24h", "Market Cap"
+
+#### 🔥 Token Burn Status
+- Reduced stat sizes (`text-lg` vs `text-2xl`)
+- Compact padding (`p-2` vs `p-4`)
+- Smaller labels (`text-[10px]` vs `text-xs`)
+
+#### 📱 Strategy Page Layout (Mobile)
+- New order: Token Swap → F Token Price → Activity Stats → Holdings
+- Activity Stats separated from SwapSection
+- Activity Stats shown after chart on mobile
+
+#### 🎬 CTA Sections
+- **Strategy CTA** ("Ready to Join the Strategy?"):
+  - Compact buttons (`px-4 py-2.5 text-xs`)
+  - Shorter text: "Swap Tokens →" instead of "Swap Tokens Now →"
+  
+- **Home CTA** ("Ready to Get Started?"):
+  - Title size matched to FAQ (`text-3xl`)
+  - Subtitle size matched to Strategy Scenarios (`text-base`)
+  - Slightly larger buttons (`px-5 py-3 text-sm`)
+
+#### 🦶 Footer
+- Separate mobile/desktop layouts
+- Mobile: Centered logo, buttons in row, Resources+Legal in 2 columns
+- Desktop: 4-column grid
+
+### Fixed
+
+#### 🐛 Bug Fixes
+- **Cookie Consent checkboxes**: Visual checkmarks now display correctly
+- **Dynamic Labs nesting**: Removed duplicate DynamicContextProvider from WalletConnectModal
+- **Hero Stats icons/tooltips**: Swapped positions (icon left, tooltip right)
+
+### Technical Details
+
+#### Responsive Breakpoints
+- Mobile: `< 640px` (default styles)
+- Tablet: `640px+` (sm: prefix)
+- Desktop: `1024px+` (lg: prefix)
+
+#### Key Tailwind Patterns
+```jsx
+// Horizontal scroll container
+<div className="overflow-x-auto sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0 hide-scrollbar">
+  <div className="flex sm:grid sm:grid-cols-4 gap-3 min-w-max sm:min-w-0">
+    <div className="w-36 sm:w-auto flex-shrink-0 sm:flex-shrink">
+      {/* Card content */}
+    </div>
+  </div>
+</div>
+
+// Dot indicators (mobile only)
+<div className="flex sm:hidden justify-center gap-1.5 mt-2">
+  <div className="w-1.5 h-1.5 rounded-full bg-gray-300"></div>
+  {/* More dots */}
+</div>
+```
+
+---
+
 ## [2.0.0] - 2026-01-08
 
 ### 🎉 Major Release - Production Ready
